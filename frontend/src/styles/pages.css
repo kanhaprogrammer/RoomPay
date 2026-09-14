@@ -1,0 +1,183 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--primary-soft) 0%, var(--bg) 72%);
+  border-bottom: 1px solid var(--border);
+}
+.hero-inner {
+  padding: 76px 0 64px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 42px;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+.hero .lede {
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 48px 0 40px;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero-image {
+    order: -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---------- How it works ---------- */
+.steps-section {
+  padding: 56px 0 72px;
+}
+.steps-section h2 {
+  font-size: 24px;
+  margin-bottom: 34px;
+  text-align: center;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.step-card {
+  padding: 4px;
+}
+.step-index {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.step-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 8px;
+}
+.step-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 760px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 460px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Auth (create/join) screens ---------- */
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.auth-topbar {
+  padding: 22px 0;
+}
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 60px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+}
+.auth-card h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.auth-card .subtitle {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin-bottom: 28px;
+}
+.auth-footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Room created success ---------- */
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--success-soft);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.summary-list {
+  margin: 20px 0 24px;
+}
+.summary-list .summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px;
+}
+.summary-list .summary-row:last-child {
+  border-bottom: none;
+}
+.summary-list .summary-row .label {
+  color: var(--ink-faint);
+}
+.summary-list .summary-row .value {
+  font-weight: 600;
+}
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ---------- Add expense modal form width ---------- */
+.expense-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
