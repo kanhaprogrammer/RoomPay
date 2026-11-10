@@ -1,0 +1,19 @@
+# Render Blueprint - deploys the API. (The frontend goes on Vercel.)
+# Render dashboard -> New -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: room-pay-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: MONGODB_URI # your Atlas connection string (set in the dashboard)
+        sync: false
+      - key: CLIENT_ORIGIN # your Vercel URL, e.g. https://room-pay.vercel.app
+        sync: false

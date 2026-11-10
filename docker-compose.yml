@@ -1,0 +1,14 @@
+# Optional: a local MongoDB for development (`npm run db:up`).
+# Not needed if you use MongoDB Atlas.
+services:
+  mongo:
+    image: mongo:7
+    container_name: room-pay-mongo
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - room-pay-mongo-data:/data/db
+
+volumes:
+  room-pay-mongo-data:
